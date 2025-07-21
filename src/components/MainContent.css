@@ -1,0 +1,155 @@
+.main-content {
+  margin-left: 250px;
+  padding: 24px;
+  background: linear-gradient(to bottom, #404040, #121212);
+  min-height: 100vh;
+  color: #fff;
+  padding-bottom: 110px; /* Add space for the music player */
+}
+
+.main-header {
+  margin-bottom: 32px;
+}
+
+.search-bar input {
+  width: 100%;
+  max-width: 400px;
+  padding: 12px 24px;
+  border-radius: 20px;
+  border: none;
+  background-color: #282828;
+  color: #fff;
+  font-size: 14px;
+}
+
+.search-bar input::placeholder {
+  color: #b3b3b3;
+}
+
+.featured-artists,
+.featured-playlists {
+  margin-bottom: 48px;
+  position: relative;
+}
+
+/* Add gradient fade effect for horizontal scroll */
+.featured-artists::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 100px;
+  background: linear-gradient(to right, transparent, #121212);
+  pointer-events: none;
+}
+
+h2 {
+  font-size: 24px;
+  margin-bottom: 24px;
+}
+
+.featured-artists .grid-container {
+  display: flex;
+  overflow-x: auto;
+  gap: 24px;
+  padding: 4px 0 20px 0;
+  scroll-behavior: smooth;
+  -ms-overflow-style: none;  /* Hide scrollbar IE and Edge */
+  scrollbar-width: none;  /* Hide scrollbar Firefox */
+}
+
+.featured-artists .grid-container::-webkit-scrollbar {
+  display: none; /* Hide scrollbar Chrome, Safari, Opera */
+}
+
+.featured-artists .grid-item {
+  flex: 0 0 200px; /* Fixed width for artist cards */
+  background: #282828;
+  padding: 16px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+/* Keep grid layout for playlists */
+.featured-playlists .grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 24px;
+}
+
+.featured-playlists .grid-item {
+  background: #282828;
+  padding: 16px;
+  border-radius: 8px;
+  transition: background-color 0.3s;
+  cursor: pointer;
+}
+
+.grid-item:hover {
+  background: #383838;
+}
+
+.featured-artists .grid-item img {
+  width: 168px;
+  height: 168px;
+  border-radius: 50%;
+  margin-bottom: 16px;
+  object-fit: cover;
+}
+
+.featured-playlists .grid-item img {
+  width: 100%;
+  border-radius: 4px;
+  margin-bottom: 16px;
+}
+
+.grid-item h3 {
+  font-size: 16px;
+  margin-bottom: 8px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.grid-item p {
+  font-size: 14px;
+  color: #b3b3b3;
+}
+
+.artist-type {
+  color: #1db954;
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+.artist-genre {
+  font-size: 12px;
+}
+
+.playlist-description {
+  margin-bottom: 8px;
+}
+
+.playlist-songs {
+  border-top: 1px solid #404040;
+  padding-top: 8px;
+  margin-top: 8px;
+}
+
+.songs-preview {
+  font-size: 12px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Add hover effect to images */
+.grid-item img {
+  transition: transform 0.3s ease;
+}
+
+.grid-item:hover img {
+  transform: scale(1.05);
+}
